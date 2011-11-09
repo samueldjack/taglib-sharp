@@ -34,3 +34,4 @@ _ReSharper*
 src/obj/*
 *.suo
 *.user
+tests/obj/*
