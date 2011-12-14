@@ -1558,7 +1558,7 @@ namespace TagLib {
 		}
 
         /// <summary>
-        /// Causes the original strack trace of the exception to be preserved when it is rethrown
+        /// Causes the original stack trace of the exception to be preserved when it is rethrown
         /// </summary>
         /// <param name="ex"></param>
 		private static void PrepareExceptionForRethrow(Exception ex)
