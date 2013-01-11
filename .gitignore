@@ -29,11 +29,11 @@ tests/*.dll
 tests/*.xml
 test-results
 .*.swp
-
-_ReSharper.taglib-sharp/
 _ReSharper.taglib-sharp.VS2010/
+_ReSharper.taglib-sharp/
 src/obj/
 tests/obj/
 *.user
-*.pdb
 *.suo
+*.pdb
+*.orig
