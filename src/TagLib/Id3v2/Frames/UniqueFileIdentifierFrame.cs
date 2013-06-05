@@ -36,7 +36,9 @@ namespace TagLib.Id3v2
 	/// </summary>
 	public class UniqueFileIdentifierFrame : Frame
 	{
-#region Private Fields
+	    private const string DummyOwnerId = "http://www.id3.org/dummy/ufid.html";
+
+	    #region Private Fields
 		
 		/// <summary>
 		///    Contains the owner string.
@@ -193,6 +195,10 @@ namespace TagLib.Id3v2
 			set {identifier = value;}
 		}
 		
+        public override string ToString()
+        {
+            return "[" + owner + "] " + identifier.ToString();
+        }
 #endregion
 		
 		
@@ -267,12 +273,22 @@ namespace TagLib.Id3v2
 		{
 			ByteVectorCollection fields =
 				ByteVectorCollection.Split (data, (byte) 0);
-			
-			if (fields.Count != 2)
-				return;
-			
-			owner = fields [0].ToString (StringType.Latin1);
-			identifier = fields [1];
+
+		    if (fields.Count == 0)
+		        return;
+
+		    if (fields.Count == 1)
+		    {
+		        // this can happen with BeatPort files, which only contain an identifier,
+		        // not an owner
+		        owner = DummyOwnerId;
+		        identifier = fields[0];
+		    }
+		    else
+		    {
+		        owner = fields[0].ToString(StringType.Latin1);
+		        identifier = fields[1];
+		    }
 		}
 		
 		/// <summary>
