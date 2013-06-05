@@ -30,6 +30,22 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRuleSets>false</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="glib-sharp, Version=2.12.0.0, Culture=neutral, PublicKeyToken=35e10195dab3c99f">
       <SpecificVersion>False</SpecificVersion>
@@ -65,8 +81,25 @@
     <Compile Include="fixtures\TagLib.Tests.FileFormats\OggFormatTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.FileFormats\StandardTests.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\AddImageMetadataTests.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\CopyFromTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\Cr2Canon400d1Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\DngLeicaM8Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\EmptyCommentTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\GifExiftoolLongCommentTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\GifExiftoolTangled1Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\GifExiftoolTangled2Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\GifExiftoolTangled3Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\GifExiftoolTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\GifGimpTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\ImageTagTests.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\InvalidIFDEntryTypeTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\InvalidIFDOffsetTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\JpegBGO624097Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\JpegCanonBibble5Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegCanonZoombrowserTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\JpegNikon1Bibble5Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegNikon1Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\JpegNikon2Bibble5Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegNikon2Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegNikon3Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegNikon4Test.cs" />
@@ -74,11 +107,18 @@
     <Compile Include="fixtures\TagLib.Tests.Images\JpegOlympus1Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegOlympus2Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegOlympus3Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\JpegOlympusCorruptMNTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegPanasonicTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\JpegPropertyTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegSegmentSizeTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegSony1Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegSony2Test.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\JpegTangledTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\NefNikonD90Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\NullOrientationTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\PefPentaxKd10Test.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\PngGimpPngcrushTest.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\PngGimpTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\RationalTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\Utils.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\Validators\CommentModificationValidator.cs" />
@@ -87,8 +127,11 @@
     <Compile Include="fixtures\TagLib.Tests.Images\Validators\IMetadataModificationValidator.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\Validators\KeywordsModificationValidator.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\Validators\NoModificationValidator.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\Validators\PropertyModificationValidator.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\Validators\RemoveMetadataValidator.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\Validators\TagCommentModificationValidator.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\Validators\TagKeywordsModificationValidator.cs" />
+    <Compile Include="fixtures\TagLib.Tests.Images\Validators\TagPropertyModificationValidator.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\XapTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\XmpCrashTest.cs" />
     <Compile Include="fixtures\TagLib.Tests.Images\XmpSpecTest.cs" />
